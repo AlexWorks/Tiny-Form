@@ -1,0 +1,64 @@
+$secondary-bg: #76276C;
+$primary-bg: #fff;
+
+$line-color: #B175AA;
+
+* {
+  box-sizing: border-box;
+}
+
+.sing-up-form {
+  background: $primary-bg;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 400px;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+
+  &__heading {
+    color: #fff;
+    background: $secondary-bg;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    font: bold 24px 'Open Sans';
+    text-align: center;
+  }
+
+  &__buttons {
+    margin: 15px 15px 0;
+    padding-bottom: 15px;
+  }
+
+  &__submit {
+    color: #fff;
+    background: $secondary-bg;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+
+    &:active {
+      background: red;
+    }
+  }
+
+  &__cancel {
+    color: #fff;
+    background: $secondary-bg;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+
+    &:active {
+      background: red;
+    }
+  }
+
+  &__divider-line {
+    background: $line-color;
+    height: 3px;
+    margin: 0 15px;
+  }
+
+
+}
