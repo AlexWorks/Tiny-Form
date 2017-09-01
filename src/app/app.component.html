@@ -1,12 +1,32 @@
-<div class = "sing-up-form">
+<form [formGroup] = "myForm" (ngSubmit) = "onSubmit(myForm.value)" class = "sing-up-form">
   <h3 class = "sing-up-form__heading">
     <strong>Sing up for our Newsletter</strong>
   </h3>
-  <app-input-fields (change)="handleSubmit($event)"></app-input-fields>
+  <div class="input-fields">
+    <div class = "input-fields__input-wrapper">
+
+      <input type = "text" class = "input-fields__firstname"   placeholder="Firstname*" name = "firstname"
+       [formControl] = "myForm.controls['firstname']" [class.error] = "!myForm.controls['firstname'].valid
+       && myForm.controls['firstname'].touched">
+
+      <input type = "text" class = "input-fields__lastname" placeholder="Lastname*"
+             [formControl] = "myForm.controls['lastname']" [class.error] = "!myForm.controls['lastname'].valid
+             && myForm.controls['lastname'].touched">
+
+      <input type = "password" class = "input-fields__password" placeholder="Password*" name = "password"
+             [formControl] = "myForm.controls['password']"  [class.error] = "!myForm.controls['password'].valid
+             && myForm.controls['password'].touched">
+    </div>
+
+    <label class = "input-fields__notifications" >
+      <input type = "checkbox" (click) = "handleCheckboxClick($event)" [formControl] = "myForm.controls['sub']">
+    </label>
+
+  </div>
   <div class = "sing-up-form__divider-line"></div>
   <div class = "sing-up-form__buttons">
-    <input class = "sing-up-form__submit" type = button value = "Sing up!">
+    <button class = "sing-up-form__submit" type = "submit" [disabled] = "!myForm.valid">Sing up!</button>
     <input class = "sing-up-form__cancel" type = button value = "Not now">
   </div>
-</div>
+</form>
 
